@@ -1,0 +1,16 @@
+{
+  "profile": "default",
+  "region": "eu-north-1",
+  "configuration": "Release",
+  "framework": "netcoreapp2.1",
+  "template": "serverless.yml"
+}
+
+//DebugSettings
+//{
+//  "profile": "playground",
+//  "region": "eu-north-1",
+//  "configuration": "Debug",
+//  "framework": "netcoreapp2.1",
+//  "template": "serverless.yml"
+//}

@@ -1,0 +1,58 @@
+image: polestardevhouse/sls-netcore
+
+pipelines:
+  default:
+    - step:
+        name: Build and test
+        caches:
+          - dotnetcore
+        script:
+          - dotnet restore -s https://www.myget.org/F/polestar-dev-house/auth/${MYGET_API_KEY}/api/v3/index.json -s https://api.nuget.org/v3/index.json
+          - dotnet build --no-restore
+          - dotnet test
+  branches:
+    master:
+      - step:
+          name: Deploy to dev
+          deployment: dev
+          script:
+            - dotnet restore  -s https://www.myget.org/F/polestar-dev-house/auth/${MYGET_API_KEY}/api/v3/index.json -s https://api.nuget.org/v3/index.json
+            - cd src/SpacePortal.Lambda/
+            - yarn install
+            - yarn build
+            - yarn test
+            - ./node_modules/.bin/serverless config credentials --provider aws --key $AWS_ACCESS_KEY_ID --secret $AWS_SECRET_ACCESS_KEY --env dev
+            - ./node_modules/.bin/serverless deploy --stage dev --env dev
+          caches:
+            - dotnetcore
+            - node
+      - step:
+          name: Deploy to staging
+          deployment: staging
+          trigger: manual
+          script:
+            - dotnet restore  -s https://www.myget.org/F/polestar-dev-house/auth/${MYGET_API_KEY}/api/v3/index.json -s https://api.nuget.org/v3/index.json
+            - cd src/SpacePortal.Lambda/
+            - yarn install
+            - yarn build
+            - yarn test
+            - ./node_modules/.bin/serverless config credentials --provider aws --key $AWS_ACCESS_KEY_ID --secret $AWS_SECRET_ACCESS_KEY --env staging
+            - ./node_modules/.bin/serverless deploy --stage staging --env staging
+          caches:
+            - dotnetcore
+            - node
+      - step:
+          name: Deploy to production
+          deployment: production
+          trigger: manual
+          script:
+            - dotnet restore  -s https://www.myget.org/F/polestar-dev-house/auth/${MYGET_API_KEY}/api/v3/index.json -s https://api.nuget.org/v3/index.json
+            - cd src/SpacePortal.Lambda/
+            - yarn install
+            - yarn build
+            - yarn test
+            - ./node_modules/.bin/serverless config credentials --provider aws --key $AWS_ACCESS_KEY_ID --secret $AWS_SECRET_ACCESS_KEY --env prod
+            - ./node_modules/.bin/serverless deploy --stage prod --env prod
+          caches:
+            - dotnetcore
+            - node

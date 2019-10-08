@@ -1,0 +1,18 @@
+{
+  "name": "aws-lambda-sls-netcore",
+  "description": "Package, test and deployment commands",
+  "author": "Devhouse",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "dotnet lambda package --configuration release --framework netcoreapp2.1 --output-package bin/release/netcoreapp2.1/deploy-package.zip",
+    "test": "dotnet test \"--logger:junit;LogFilePath=../../test-results/testresults.xml\"",
+    "deploy:dev": "npm run build && npm run test && ENV=dev node_modules/.bin/serverless deploy --verbose",
+    "deploy:stage": "npm run build && npm run test && ENV=stage node_modules/.bin/serverless deploy --verbose",
+    "deploy:prod": "npm run build && npm run test && ENV=prod node_modules/.bin/serverless deploy --verbose"
+  },
+  "devDependencies": {
+    "serverless": "^1.33.2",
+    "serverless-cloudwatch-dashboard": "^1.0.2",
+    "serverless-iam-roles-per-function": "^2.0.2"
+  }
+}

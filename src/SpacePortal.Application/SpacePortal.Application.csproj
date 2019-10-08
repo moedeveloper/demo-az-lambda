@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Infrastructure\**" />
+      <EmbeddedResource Remove="Infrastructure\**" />
+      <None Remove="Infrastructure\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.3.101.70" />
+      <PackageReference Include="AWSSDK.S3" Version="3.3.104.27" />
+      <PackageReference Include="AWSSDK.SimpleEmail" Version="3.3.101.43" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.1.1" />
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Services\" />
+    </ItemGroup>
+
+</Project>

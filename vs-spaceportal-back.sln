@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9AB372CE-FE10-46B8-8A7B-E50EC242F57A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".pipeline", ".pipeline", "{C272BB0F-9B37-4476-8410-055CAA68E1B6}"
+	ProjectSection(SolutionItems) = preProject
+		bitbucket-pipelines.yml = bitbucket-pipelines.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpacePortal.Application", "src\SpacePortal.Application\SpacePortal.Application.csproj", "{74564DE6-1380-4D6F-8B24-344CFBB9D65C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpacePortal.Lambda", "src\SpacePortal.Lambda\SpacePortal.Lambda.csproj", "{A9F940D3-D3A0-406E-B1DD-48AA1D3410FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74564DE6-1380-4D6F-8B24-344CFBB9D65C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74564DE6-1380-4D6F-8B24-344CFBB9D65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74564DE6-1380-4D6F-8B24-344CFBB9D65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74564DE6-1380-4D6F-8B24-344CFBB9D65C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9F940D3-D3A0-406E-B1DD-48AA1D3410FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9F940D3-D3A0-406E-B1DD-48AA1D3410FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9F940D3-D3A0-406E-B1DD-48AA1D3410FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9F940D3-D3A0-406E-B1DD-48AA1D3410FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{74564DE6-1380-4D6F-8B24-344CFBB9D65C} = {9AB372CE-FE10-46B8-8A7B-E50EC242F57A}
+		{A9F940D3-D3A0-406E-B1DD-48AA1D3410FF} = {9AB372CE-FE10-46B8-8A7B-E50EC242F57A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B65FC000-0552-4516-ADA1-22881EC29BC9}
+	EndGlobalSection
+EndGlobal

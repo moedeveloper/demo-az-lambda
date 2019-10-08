@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+        <AWSProjectType>Lambda</AWSProjectType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="appsettings.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.4.0" />
+        <PackageReference Include="AWSSDK.Core" Version="3.3.103.43" />
+        <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.3.101.70" />
+        <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.3.100.1" />
+        <PackageReference Include="AWSSDK.S3" Version="3.3.104.27" />
+        <PackageReference Include="AWSSDK.SimpleEmail" Version="3.3.101.43" />
+        <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.AzureAD.UI" Version="2.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.Core" Version="2.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.CookiePolicy" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Options" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.1.1" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\SpacePortal.Application\SpacePortal.Application.csproj" />
+    </ItemGroup>
+
+</Project>
