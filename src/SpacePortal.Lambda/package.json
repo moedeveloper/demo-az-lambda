@@ -11,7 +11,7 @@
     "deploy:prod": "npm run build && npm run test && ENV=prod node_modules/.bin/serverless deploy --verbose"
   },
   "devDependencies": {
-    "serverless": "^1.33.2",
+    "serverless": "^1.83.3",
     "serverless-cloudwatch-dashboard": "^1.0.2",
     "serverless-iam-roles-per-function": "^2.0.2"
   }
